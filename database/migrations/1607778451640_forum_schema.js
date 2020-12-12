@@ -3,19 +3,20 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class GroupSchema extends Schema {
+class ForumSchema extends Schema {
   up () {
-    this.create('groups', (table) => {
+    this.create('forums', (table) => {
       table.increments()
 			table.string('name')
-			table.string('administrator')
+			table.string('description')
+			table.string('last_activity')
       table.timestamps()
     })
   }
 
   down () {
-    this.drop('groups')
+    this.drop('forums')
   }
 }
 
-module.exports = GroupSchema
+module.exports = ForumSchema

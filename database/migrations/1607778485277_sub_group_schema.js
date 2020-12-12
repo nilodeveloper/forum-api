@@ -3,19 +3,18 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class GroupSchema extends Schema {
+class SubGroupSchema extends Schema {
   up () {
-    this.create('groups', (table) => {
+    this.create('sub_groups', (table) => {
       table.increments()
 			table.string('name')
-			table.string('administrator')
       table.timestamps()
     })
   }
 
   down () {
-    this.drop('groups')
+    this.drop('sub_groups')
   }
 }
 
-module.exports = GroupSchema
+module.exports = SubGroupSchema

@@ -20,4 +20,4 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.get('/register', ()=>{return {message: 'register user'}})
+Route.post('/user', 'UserController.create')
