@@ -19,5 +19,8 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
-
+Route.post('login', 'UserController.login')
+Route.get('users/:email', 'UserController.show').middleware('auth')
+Route.get('profile/:email', 'UserController.show').middleware('auth')
 Route.post('/user', 'UserController.create')
+Route.post('/create/topic', 'PostController.create').middleware('auth')

@@ -7,8 +7,8 @@ class PostSchema extends Schema {
   up () {
     this.create('posts', (table) => {
       table.increments()
-			table.string('id_user')
-			table.string('id_forum')
+			table.string('email')
+			table.string('name')
 			table.string('message')
       table.timestamps()
     })
