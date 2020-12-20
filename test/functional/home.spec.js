@@ -98,19 +98,26 @@ test('usuario cadastrado consegue criar um tópico', async({client})=>{
 		image:'asdasdasdsa',
 		description:'uma descrição aqui'
 	}).end()
-	const response2 = await client.post('/user').send({
-		username: 'Nilo2',
-		nickname:'Nileco2',
-		email:'nilo@email.com2',
-		password:'abc123',
-		image:'asdasdasdsa2',
-		description:'uma descrição aqui2'
-	}).end()
 	const user = await User.findBy("email", "nilo@email.com")
 	const result = await client.post('/create/topic').loginVia(user).send({
 		name: 'O que você acha do brasil?',
 		message: 'Vivemos neste pais desde o nascimento e blablablablabla',
-		email: 'nilo@email.com'
 	}).end()
 	result.assertStatus(200)
+})
+test('usuario sem login não consegue criar um tópico', async({client})=>{	
+	const response = await client.post('/user').send({
+		username: 'Nilo',
+		nickname:'Nileco',
+		email:'nilo@email.com',
+		password:'abc123',
+		image:'asdasdasdsa',
+		description:'uma descrição aqui'
+	}).end()
+	const user = await User.findBy("email", "nilo@email.com")
+	const result = await client.post('/create/topic').send({
+		name: 'O que você acha do brasil?',
+		message: 'Vivemos neste pais desde o nascimento e blablablablabla',
+	}).end()
+	result.assertStatus(401)
 })
