@@ -1,5 +1,5 @@
 const { test, trait, afterEach } = use ('Test/Suite')('Testando Posts')
-
+// add um comentario
 trait('Test/ApiClient')
 trait('Auth/Client')
 
