@@ -14,6 +14,10 @@ class PostController {
 			return response.status(401)
 		}
 	}
+	async show(){
+		const post = await Post.all()
+		return post
+	}
 }
 
 module.exports = PostController

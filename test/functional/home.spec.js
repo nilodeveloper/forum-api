@@ -1,4 +1,4 @@
-const { test, trait, afterEach } = use ('Test/Suite')('User')
+const { test, trait, afterEach } = use ('Test/Suite')('Testando Users')
 
 trait('Test/ApiClient')
 trait('Auth/Client')
