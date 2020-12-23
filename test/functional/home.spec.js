@@ -121,3 +121,26 @@ test('usuario sem login não consegue criar um tópico', async({client})=>{
 	}).end()
 	result.assertStatus(401)
 })
+
+test('usuário logado pode responder a um tópico', async({client})=>{	
+	const response = await client.post('/user').send({
+		username: 'Nilo',
+		nickname:'Nileco',
+		email:'nilo@email.com',
+		password:'abc123',
+		image:'asdasdasdsa',
+		description:'uma descrição aqui'
+	}).end()
+	const user = await User.findBy("email", "nilo@email.com")
+	const result = await client.post('/create/answer').loginVia(user).send({
+		message: 'eu concordo com o seu tópico!',
+	}).end()
+	result.assertStatus(200)
+})
+
+test('usuário deslogado não pode responder a um tópico', async({client})=>{	
+	const result = await client.post('/create/answer').send({
+		message: 'eu concordo com o seu tópico!',
+	}).end()
+	result.assertStatus(401)
+})
