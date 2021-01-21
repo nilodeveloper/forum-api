@@ -1,6 +1,6 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nilodeveloper_forum-api&metric=alert_status)](https://sonarcloud.io/dashboard?id=nilodeveloper_forum-api)
+<span>[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nilodeveloper_forum-api&metric=alert_status)](https://sonarcloud.io/dashboard?id=nilodeveloper_forum-api)</span>
 
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=nilodeveloper_forum-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=nilodeveloper_forum-api)
+<span>[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=nilodeveloper_forum-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=nilodeveloper_forum-api)</span>
 
 
 # Adonis API application!
